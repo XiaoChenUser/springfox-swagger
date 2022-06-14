@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: springfox-swagger2-demo
+server:
+  port: 9090
+#健康检查
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/actuator"
+  endpoint:
+    health:
+      show-details: always
+#自定义 swagger 配置
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0整合Demo，artifact=springfox-swagger2，version=3.0.0，内部依赖于 swagger3（io.swagger.core.v3）
+  try-host: http://127.0.0.1:${server.port}
